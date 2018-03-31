@@ -1,0 +1,43 @@
+package pe.usmp.practica.recorrido.model;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+public class Vehiculo {
+	
+	@NotNull
+	@Size(min=2, max=50)
+	private String marcavehiculo;
+	@NotNull
+	@Size(min=2, max=30,message="Hola")
+	private String nombreConductor;
+	@NotNull
+	private Double recorrido;
+	
+	private Double consumo;
+
+	public Double getRecorrido() {
+		return recorrido;
+	}
+	public void setRecorrido(Double recorrido) {
+		this.recorrido = recorrido;
+	}
+	public Double getConsumo() {
+		return consumo;
+	}
+	public void setConsumo(Double consumo) {
+		this.consumo = consumo;
+	}
+	public String getMarcavehiculo() {
+		return marcavehiculo;
+	}
+	public void setMarcavehiculo(String marcavehiculo) {
+		this.marcavehiculo = marcavehiculo;
+	}
+	public String getNombreConductor() {
+		return marcavehiculo;
+	}
+	public void setNombreConductor(String nombreConductor) {
+		this.nombreConductor = nombreConductor;
+	}
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Ingrese conductor</title>
+</head>
+<body>
+
+
+<form action="#" th:action="@{/new}" th:object="${conductor}" method="post">
+	<table>
+	
+		<tr>
+			<td>Conductor:</td>
+			<td><input type="text" th:field="*{nombreconductor}"/></td>
+			<td th:if="${#fields.hasErrors('nombreconductor')}"
+			    th:errors="*{firstName}">Conductor Error</td>
+		</tr>
+		
+	
+		<tr>
+			<td>Recorrido:</td>
+			<td><input type="text" th:field="*{recorrido}"/></td>
+			<td th:if="${#fields.hasErrors('recorrido')}"
+			    th:errors="*{firstName}">Recorrido Error</td>
+		</tr>
+		
+		<tr>
+			<td>MarcaVehiculo:</td>
+			<td><select type="text" th:field="*{marcavehiculo}">
+			<option th:value="Marca1">Marca1</option>
+			<option th:value="Marca2">Marca2</option>
+			<option th:value="Marca3">Marca3</option></select></td>
+			
+			<td th:if="${#fields.hasErrors('marcavehiculo')}"
+			    th:errors="*{marca}">Marca Error</td>
+		</tr>
+		
+
+		<tr>
+			<td></td>
+			<td><input type="submit" value="enviar"/>
+				<input type="reset" value="cancelar"/></td>
+			<td></td>
+		</tr>
+	</table>
+
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+package pe.usmp.practica.recorrido.model;
+
+public class Conductor {
+
+}

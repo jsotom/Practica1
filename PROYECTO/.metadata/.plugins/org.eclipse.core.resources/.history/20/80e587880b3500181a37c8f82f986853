@@ -1,0 +1,40 @@
+package pe.usmp.practica.recorrido.web;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+//import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import pe.usmp.practica.recorrido.model.Conductor;
+
+public class ConductorControler {
+
+	public String initCreationForm(Model model) {
+		model.addAttribute("conductor", new Conductor());
+		return "userForm";
+	}
+	
+	@PostMapping("/new")
+	public String submitForm(@ModelAttribute Conductor conductor) {
+		
+		Double consumo;
+		
+		switch(conductor.getMarcavehiculo()) {
+		case "Marca1":
+			consumo = conductor.getRecorrido()/40.0;
+			conductor.setConsumo(consumo);
+			break;
+		case "Marca2":
+			consumo = conductor.getRecorrido()/35.0;
+			conductor.setConsumo(consumo);
+			break;
+		case "Marca3":
+			consumo = conductor.getRecorrido()/45.0;
+			conductor.setConsumo(consumo);
+			break;
+		}
+		return "resultForm";
+	
+}
+}
